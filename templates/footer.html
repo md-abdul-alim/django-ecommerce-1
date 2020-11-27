@@ -1,0 +1,66 @@
+{% load static %}
+<!--Footer-->
+  <footer class="page-footer text-center font-small mt-4 wow fadeIn">
+  {% if request.user.is_authenticated %}
+    <!-- Social icons -->
+    <div class="pb-4">
+      <a href="https://www.facebook.com/abdulalim.milon.71/" target="_blank">
+        <i class="fab fa-facebook-f mr-3"></i>
+      </a>
+
+      <a href="https://twitter.com/abdulalim_milon" target="_blank">
+        <i class="fab fa-twitter mr-3"></i>
+      </a>
+
+      <a href="https://www.youtube.com/playlist?list=PLLRM7ROnmA9F2vBXypzzplFjcHUaKWWP5" target="_blank">
+        <i class="fab fa-youtube mr-3"></i>
+      </a>
+      <a href="https://github.com/md-abdul-alim" target="_blank">
+        <i class="fab fa-github mr-3"></i>
+      </a>
+    </div>
+    <!-- Social icons -->
+  {% else %}
+   <!--Call to action-->
+    <div class="pt-4">
+      <a class="btn btn-outline-white" href="#" target="_blank"
+        role="button">Download CV
+        <i class="fas fa-download ml-2"></i>
+      </a>
+      <a class="btn btn-outline-white" href="#" target="_blank" role="button">Visit my Portfolio
+        <i class="fas fa-graduation-cap ml-2"></i>
+      </a>
+    </div>
+    <!--/.Call to action-->
+
+    <hr class="my-4">
+
+    <!-- Social icons -->
+    <div class="pb-4">
+      <a href="https://www.facebook.com/abdulalim.milon.71/" target="_blank">
+        <i class="fab fa-facebook-f mr-3"></i>
+      </a>
+
+      <a href="https://twitter.com/abdulalim_milon" target="_blank">
+        <i class="fab fa-twitter mr-3"></i>
+      </a>
+
+      <a href="https://www.youtube.com/playlist?list=PLLRM7ROnmA9F2vBXypzzplFjcHUaKWWP5" target="_blank">
+        <i class="fab fa-youtube mr-3"></i>
+      </a>
+
+      <a href="https://github.com/md-abdul-alim" target="_blank">
+        <i class="fab fa-github mr-3"></i>
+      </a>
+    </div>
+    <!-- Social icons -->
+  {% endif %}
+    <!--Copyright-->
+    <div class="footer-copyright py-3">
+      © 2020 Copyright:
+      <a href="https://mdbootstrap.com/education/bootstrap/" target="_blank">Abdul Alim MILON</a>
+    </div>
+    <!--/.Copyright-->
+
+  </footer>
+  <!--/.Footer-->

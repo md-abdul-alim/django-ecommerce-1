@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+{% include 'head.html' %}
+
+<body oncontextmenu="return false;"> <!-- https://stackoverflow.com/questions/28690564/is-it-possible-to-remove-inspect-element -->
+    
+{% include 'navbar.html' %}
+    <!-- https://docs.djangoproject.com/en/3.1/ref/contrib/messages/#displaying-messages -->
+    <!-- https://mdbootstrap.com/docs/jquery/components/alerts/ -->
+
+    <!-- this messages part 2 start from 34.37 minit. Link: https://www.youtube.com/watch?reload=9&v=Xjty8q524Jo&list=PLLRM7ROnmA9F2vBXypzzplFjcHUaKWWP5&index=2&ab_channel=JustDjango -->
+    <div class="mt-5 pt-4">
+    {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+          {{ message }}
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        {% endfor %}
+    {% endif %}
+    </div>
+    
+    {% block content %}
+    {% endblock content %}
+
+    {% block extra_body %}
+    {% endblock %}
+
+    {% include "footer.html" %}
+    {% include 'scripts.html' %}
+
+    {% block extra_scripts %}
+    {% endblock extra_scripts %}
+
+
+</body>
+</html>

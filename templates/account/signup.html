@@ -1,0 +1,70 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+{% load crispy_forms_tags %}
+{% block head_title %}{% trans "Signup" %}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="col-md-10 offset-md-1 mt-5" >
+            <!-- https://getbootstrap.com/docs/4.5/components/jumbotron/ -->
+            <div class="jumbotron"  >
+              <h1>{% trans "Sign Up" %}</h1>
+
+              <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+
+              <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+                {% csrf_token %}
+                <!---->
+                
+                {{form.username | as_crispy_field}}
+                {{form.email | as_crispy_field}}
+                <div class="row" style="color: red">
+                    <div class="col-md-6">
+                        {{form.password1 | as_crispy_field}}
+                    </div>
+                    <div class="col-md-6">
+                        {{form.password2 | as_crispy_field}}
+                    </div>
+                </div>
+                <!---->
+                {% if redirect_field_value %}
+                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                {% endif %}
+
+                <div class="row">
+                    <div class="col-md-8">
+                        <button type="submit" class="btn btn-success btn-block btn-lg">{% trans "Sign Up " %} &raquo;</button>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="{{ login_url }}" class="btn btn-secondary btn-block btn-lg">
+                            <i class="fas fa-sign-in-alt"></i> Sign In
+                        </a>
+                    </div>
+                </div>
+
+              </form>
+            </div>
+    </div>
+</div>
+<hr><hr>
+<div class="container">
+    <div class="col-md-10 offset-md-1 mt-5" >
+            <!-- https://getbootstrap.com/docs/4.5/components/jumbotron/ -->
+            <div class="jumbotron" style="color:green; background-color:pink " >
+              <h1>{% trans "Sign Up" %}</h1>
+
+              <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+
+              <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+                {% csrf_token %}
+                {{ form | crispy}}
+                {% if redirect_field_value %}
+                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                {% endif %}
+                <button class="btn btn-primary" type="submit">{% trans "Sign Up" %} &raquo;</button>
+              </form>
+            </div>
+    </div>
+</div>
+{% endblock %}
