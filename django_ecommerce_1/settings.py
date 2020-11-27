@@ -29,11 +29,14 @@ SECRET_KEY = config('SECRET_KEY')
 STRIPE_SECRET_KEY = config('STRIPE_TEST_SECRET_KEY')
 STRIPE_PUBLIC_KEY = config('STRIPE_TEST_PUBLIC_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG')
+#DEBUG = config('DEBUG')
 #DEBUG = True
+#for deployment
+DEBUG = (config('DEBUG') == 'True')
 
-ALLOWED_HOSTS = []
-#ALLOWED_HOSTS = ['eelearning.herokuapp.com']
+#ALLOWED_HOSTS = []
+#for deployment
+ALLOWED_HOSTS =['ecomerce-django.herokuapp.com']
 
 # Application definition
 
@@ -89,26 +92,31 @@ WSGI_APPLICATION = 'django_ecommerce_1.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': config('DB_NAME'),
+#         'USER': config('DB_USER'),
+#         'PASSWORD': config('DB_PASSWORD'),
+#         'HOST': config('DB_HOST'),
+#         'PORT': '3306',
+#         "OPTIONS": {
+#             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+#         },
 #     }
 # }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': config('DB_NAME'),
-        'USER': config('DB_USER'),
-        'PASSWORD': config('DB_PASSWORD'),
-        'HOST': config('DB_HOST'),
-        'PORT': '3306',
-        "OPTIONS": {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-        },
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'ecommercedjango',
+        'USER': 'postgres',
+        'PASSWORD': 'adminmilon',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
+
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
