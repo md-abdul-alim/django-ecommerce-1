@@ -36,7 +36,7 @@ DEBUG = (config('DEBUG') == 'True')
 
 #ALLOWED_HOSTS = []
 #for deployment
-ALLOWED_HOSTS =['ecomerce-django.herokuapp.com']
+ALLOWED_HOSTS =['ecomerce-django.herokuapp.com','127.0.0.1']
 
 # Application definition
 
