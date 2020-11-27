@@ -75,7 +75,7 @@ class Coupon(models.Model):
 
 
 CATEGORY_CHOICES = (
-    ('Ow', 'Outwear'),
+    ('T', 'T-shirt'),
     ('P', 'Pant'),
     ('S', 'Shirt'),
     ('SW', 'Sport wear')
