@@ -27,12 +27,17 @@
               <span class="sr-only">(current)</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link border border-light rounded waves-effect" href="https://mdbootstrap.com/education/bootstrap/" target="_blank">Demo video of this project</a>
-          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link border border-light rounded waves-effect" href="https://mdbootstrap.com/education/bootstrap/" target="_blank">Brief explanation of this project</a>
+          </li> -->
           {% else %}
-          <li class="nav-item">
-            <a class="nav-link border border-light rounded waves-effect" href="https://mdbootstrap.com/education/bootstrap/" target="_blank">Demo video of this project</a>
+          <!-- <li class="nav-item">
+            <a class="nav-link border border-light rounded waves-effect" href="https://mdbootstrap.com/education/bootstrap/" target="_blank">Brief explanation of this project</a>
+          </li> -->
+          <li class="nav-item active">
+            <a class="nav-link waves-effect" href="{% url 'ecommerce:home' %}">Default: Un:
+              <span style="color: red">alimmilon</span> Pass:<span style="color: red">abdul$alim</span>
+            </a>
           </li>
           {% endif %}
         </ul>
